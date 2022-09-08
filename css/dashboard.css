@@ -1,0 +1,126 @@
+.dashboard_container{
+    width: 100%;
+    display: flex;
+    display: -webkit-flex;
+    display: -moz-flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 25px;
+}
+
+.dash-box{
+    width: 23%;
+    display: flex;
+    display: -webkit-flex;
+    display: -moz-flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: .2rem .8rem;
+    border-radius: 7px;
+    -webkit-border-radius: 7px;
+    -moz-border-radius: 7px;
+    -khtml-border-radius: 7px;
+    box-shadow: 5px 5px 5px rgba(104, 104, 104, 0.25);
+    border: 2px solid white;
+}
+
+.dash-box:nth-child(1){
+    background-color: #1b83d8;
+}
+
+.dash-box:nth-child(2){
+    background-color: #009688;
+}
+
+.dash-box:nth-child(3){
+    background-color: #ef4f4c;
+}
+
+.dash-box:nth-child(4){
+    background-color: #3b3b3b;
+}
+
+.dash-box>i{
+    font-size: 48px;
+    color: white;
+}
+
+.dash-box .total .num{
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.dash-box .total>p{
+    color: white;
+}
+
+.dash-chick{
+    margin: 0 0 50px;
+    max-height: 500px;
+    overflow: auto;
+}
+
+.box-time{
+    display: flex;
+    display: -webkit-flex;
+    display: -moz-flex;
+    justify-content: right;
+    align-items: center;
+    gap: 10px;
+    margin: 25px 0 0;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.box-time>#year{
+    font-size: 18px;
+    font-weight: bold;
+    width: 100px;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -khtml-border-radius: 5px;
+    padding: 2px 5px;
+    outline: none;
+    border: 2px solid rgb(49, 49, 49);
+    box-shadow: 2px 4px 4px rgba(81, 147, 179, 0.35);
+    background: white;
+}
+
+@media (max-width: 1248px) {
+    .dashboard_container{
+        flex-wrap: wrap;
+        -webkit-flex-wrap: wrap;
+        -ms-flex-wrap: wrap;
+        gap: 10px;
+    }
+    
+    .dash-box{
+        width: 49%;
+    }
+
+}
+
+@media (max-width: 768px) {
+    .dash-box{
+        width: 48%;
+        padding: .2rem .4rem;
+    }
+
+    .box-time{
+        font-size: 18px;
+        margin-bottom: 10px;
+    }
+
+    .box-time>#year {
+        font-size: 16px;
+        padding: 2px;
+    }
+}
+
+@media (max-width: 375px) {
+    .dash-box{
+        width: 100%;
+    }
+}

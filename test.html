@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .chartWrapper {
+            position: relative;
+        }
+
+        .chartWrapper>canvas {
+            position: absolute;
+            left: 0;
+            top: 0;
+            pointer-events: none;
+        }
+
+        .chartAreaWrapper {
+            width: 600px;
+            overflow-x: scroll;
+        }
+        #chart-Test{
+            min-width: 1200px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="chartWrapper">
+        <div class="chartAreaWrapper">
+            <div class="chartAreaWrapper2">
+                <canvas id="chart-Test" height="300" width="1200"></canvas>
+            </div>
+        </div>
+        <canvas id="axis-Test" height="300" width="0"></canvas>
+    </div>
+    <script src="js/jquery.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <Script>
+        $(document).ready(function () {
+
+            function addData(numData, chart) {
+                for (var i = 0; i < numData; i++) {
+                    chart.data.datasets[0].data.push(Math.random() * 100);
+                    chart.data.labels.push( 'Dec');
+                    var newwidth = $('.chartAreaWrapper2').width() + 60;
+                    $('.chartAreaWrapper2').width(newwidth);
+                }
+            }
+
+            $(function () {
+                var rectangleSet = false;
+                const month = ['Jan', 'Feb', 'Mar']
+                var canvasTest = $('#chart-Test');
+                var chartTest = new Chart(canvasTest, {
+                    type: 'bar',
+                    data:  {
+                        fill: false,
+                        labels: month,
+                        datasets: [{
+                        
+                            label: 'ไก่เกิด',
+                            backgroundColor: '#000',
+                            borderColor: '#775E59',
+                            data: [10, 38, 55, 63, 36]
+                        }]
+                    },
+                    maintainAspectRatio: false,
+                    responsive: true,
+                    options: {
+                        tooltips: {
+                            titleFontSize: 0,
+                            titleMarginBottom: 0,
+                            bodyFontSize: 12
+                        },
+                        legend: {
+                            display: false
+                        },
+                        scales: {
+                            xAxes: [{
+                                ticks: {
+                                    fontSize: 12,
+                                    display: false
+                                }
+                            }],
+                            yAxes: [{
+                                ticks: {
+                                    fontSize: 12,
+                                    beginAtZero: true
+                                }
+                            }]
+                        },
+                        animation: {
+                            onComplete: function () {
+                                if (!rectangleSet) {
+                                    var scale = window.devicePixelRatio;
+
+                                    var sourceCanvas = chartTest.chart.canvas;
+                                    var copyWidth = chartTest.scales['y-axis-0'].width - 10;
+                                    var copyHeight = chartTest.scales['y-axis-0'].height + chartTest.scales['y-axis-0'].top + 10;
+
+                                    var targetCtx = document.getElementById("axis-Test").getContext("2d");
+
+                                    targetCtx.scale(scale, scale);
+                                    targetCtx.canvas.width = copyWidth * scale;
+                                    targetCtx.canvas.height = copyHeight * scale;
+
+                                    targetCtx.canvas.style.width = `${copyWidth}px`;
+                                    targetCtx.canvas.style.height = `${copyHeight}px`;
+                                    targetCtx.drawImage(sourceCanvas, 0, 0, copyWidth * scale, copyHeight * scale, 0, 0, copyWidth * scale, copyHeight * scale);
+
+                                    var sourceCtx = sourceCanvas.getContext('2d');
+
+                                    // Normalize coordinate system to use css pixels.
+
+                                    sourceCtx.clearRect(0, 0, copyWidth * scale, copyHeight * scale);
+                                    rectangleSet = true;
+                                }
+                            },
+                            onProgress: function () {
+                                if (rectangleSet === true) {
+                                    var copyWidth = chartTest.scales['y-axis-0'].width;
+                                    var copyHeight = chartTest.scales['y-axis-0'].height + chartTest.scales['y-axis-0'].top + 10;
+
+                                    var sourceCtx = chartTest.chart.canvas.getContext('2d');
+                                    sourceCtx.clearRect(0, 0, copyWidth, copyHeight);
+                                }
+                            }
+                        }
+                    }
+                });
+                addData(2, chartTest);
+            });
+        });
+    </Script>
+</body>
+
+</html>

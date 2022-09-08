@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+    <script src="https://unpkg.com/@popperjs/core@2/dist/umd/popper.min.js"></script>
+    <script src="https://unpkg.com/tippy.js@6/dist/tippy-bundle.umd.js"></script>
+
+    <!-- Production -->
+    <script src="https://unpkg.com/@popperjs/core@2"></script>
+    <script src="https://unpkg.com/tippy.js@6"></script>
+
+    <style>
+        .tooptip-icon{
+            font-size: 24px;
+            cursor: pointer;
+            color: #868686;
+        }
+        .tippy-box[data-theme~='light'] {
+            color: rgb(0, 0, 0);
+            background-color: whitesmoke;
+            box-shadow: 3px 3px 3px rgb(0 0 0 / 25%);;
+            font-size: 16px;
+          }
+
+          .tippy-box[data-theme~='light'][data-placement^='top'] > .tippy-arrow::before {
+            border-top-color: #e0e0e0;
+          }
+          .tippy-box[data-theme~='light'][data-placement^='bottom'] > .tippy-arrow::before {
+            border-bottom-color: #e0e0e0;
+          }
+          .tippy-box[data-theme~='light'][data-placement^='left'] > .tippy-arrow::before {
+            border-left-color: #e0e0e0;
+          }
+          .tippy-box[data-theme~='light'][data-placement^='right'] > .tippy-arrow::before {
+            border-right-color: #e0e0e0;
+          }
+    </style>
+
+</head>
+
+<body>
+        <i class="bx bxs-info-circle tooptip-icon"></i>
+        <script>
+            tippy('.tooptip-icon', {
+                theme: 'light',
+                content: "I'm a Tippy tooltip!",
+                zIdex:1,
+                allowHTML: true,
+                duration: [1000],
+                interactive: true,
+              });
+        </script>
+</body>
+
+</html>

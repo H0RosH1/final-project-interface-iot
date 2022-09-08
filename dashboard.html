@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+    <title>Chicken Coop Smart Care</title>
+    <link rel="icon" href="./img/logo.png">
+    <link rel="stylesheet" href="./css/menu.css">
+    <link rel="stylesheet" href="./css/home.css">
+    <link rel="stylesheet" href="./css/dashboard.css">
+
+</head>
+
+<body>
+    <div class="sidebar">
+        <div class="logo_content">
+            <div class="logo">
+                <img src="./img/logo.png" alt="logo">
+                <div class="logo_name">Chicken Coop Smart Care</div>
+            </div>
+            <div class="close">
+                <i class='bx bx-x'></i>
+            </div>
+        </div>
+        <ul class="nav_list">
+            <li>
+                <a href="./dashboard.html" class="active_page">
+                    <i class='bx bx-home'></i>
+                    <span class="link_name">หน้าหลัก</span>
+                </a>
+                <span class="tooltip">หน้าหลัก</span>
+            </li>
+            <li>
+                <a href="./admin_main.html">
+                    <i class='bx bxs-user-badge'></i>
+                    <span class="link_name">หน้าหลัก</span>
+                </a>
+                <span class="tooltip">หน้าหลัก</span>
+            </li>
+            <li>
+                <a href="./admin_menu.html">
+                    <img class="icon" src="./img/edit.png" alt="img_edit">
+                    <span class="link_name">บันทึก และดูข้อมูลไก่พันธุ์</span>
+                </a>
+                <span class="tooltip">บันทึกการให้ไข่</span>
+            </li>
+            <li>
+                <a href="./calendar.html">
+                    <i class='bx bx-cog'></i>
+                    <span class="link_name">ตั้งค่า</span>
+                </a>
+                <span class="tooltip">ตั้งค่า</span>
+            </li>
+            <li>
+                <button>
+                    <i class='bx bx-log-out'></i>
+                    <span class="link_name">ออกจากระบบ</span>
+                </button>
+                <span class="tooltip">ออกจากระบบ</span>
+            </li>
+        </ul>
+    </div>
+    <div class="menu">
+        <i class='bx bx-menu' id="btn"></i>
+        <div class="username-md">
+            <i class='bx bxs-user-circle'></i>
+            <div class="name">thanawat<br>watthanasuchart</div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="contain">
+            <h1>โรงเรือนเลี้ยงของมหาวิทยาลัยขอนแก่น</h1>
+            <div class="content">
+                <div class="box_content">
+                    <div class="dashboard_container">
+                        <div class="dash-box">
+                            <i class='bx bx-user-pin' ></i>
+                            <div class="total">
+                                <p class="num">132</p>
+                                <p>ผู้ใช้ทั้งหมด</p>
+                            </div>
+                        </div>
+                        <div class="dash-box">
+                            <i class='bx bx-message-alt-add' ></i>
+                            <div class="total">
+                                <p class="num">14</p>
+                                <p>รออนุมัติ</p>
+                            </div>
+                        </div>
+                        <div class="dash-box">
+                            <i class='bx bx-heart-square'></i>
+                            <div class="total">
+                                <p class="num">56</p>
+                                <p>ไก่พันธุ์ที่มีชีวิต</p>
+                            </div>
+                        </div>
+                        <div class="dash-box">
+                            <i class='bx bxs-skull'></i>
+                            <div class="total">
+                                <p class="num">162</p>
+                                <p>ไก่พันธุ์ที่ตาย</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="box-time">
+                        เลือกปี
+                        <select name="year" id="year">
+                            <option value="2022">2022</option>
+                            <option value="2021">2021</option>
+                            <option value="2020">2020</option>
+                        </select>
+                    </div>
+                    <div class="dashboard">
+                        <div class="sup-dash">
+                            <canvas id="chicken" class="dash-chick"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="sonser">
+            <div class="username">
+                <i class='bx bxs-user-circle'></i>
+                <div class="name">thanawat watthanasuchart</div>
+            </div>
+            <div class="outside">
+                <p>วัดค่าภายนอก</p>
+                <div class="sonser_outside">
+                    <div class="get_sonser">
+                        <img src="./img/temperature.png" alt="img_tem">
+                        <div class="amount">36 °C</div>
+                    </div>
+                    <div class="get_sonser">
+                        <img src="./img/humidity.png" alt="img_humidity">
+                        <div class="amount">76%</div>
+                    </div>
+                </div>
+            </div>
+            <div class="inside">
+                <p>วัดค่าภายใน</p>
+                <div class="sonser_inside">
+                    <div class="get_sonser">
+                        <img src="./img/temperature.png" alt="img_tem">
+                        <div class="amount">36 °C</div>
+                    </div>
+                    <div class="get_sonser">
+                        <img src="./img/humidity.png" alt="img_humidity">
+                        <div class="amount">76%</div>
+                    </div>
+                </div>
+                <div class="sonser_inside">
+                    <div class="get_sonser">
+                        <img src="./img/light.png" alt="img_light">
+                        <div class="amount">15 lx</div>
+                    </div>
+                    <div class="get_sonser">
+                        <img src="./img/NH3.png" alt="img_NH3">
+                        <div class="amount">15%</div>
+                    </div>
+                </div>
+            </div>
+            <div class="analyze">
+                <p>ผลการวิเคราะห์</p>
+                <div class="sonser_analyze">
+                    <div class="get_sonser">
+                        <img src="./img/temperature.png" alt="img_tem">
+                        <div class="amount">ปกติ</div>
+                    </div>
+                    <div class="get_sonser">
+                        <img src="./img/humidity.png" alt="img_humidity">
+                        <div class="amount">ปกติ</div>
+                    </div>
+                </div>
+                <div class="sonser_analyze">
+                    <div class="get_sonser">
+                        <img src="./img/light.png" alt="img_light">
+                        <div class="amount">ค่อนข้างน้อย</div>
+                    </div>
+                    <div class="get_sonser">
+                        <img src="./img/NH3.png" alt="img_NH3">
+                        <div class="amount">ปกติ</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="js/jquery.js"></script>
+    <script src="./js/menu.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+             
+        const rectangleSet = false;
+        const Chicken = $('#chicken');
+        const dataEgg = [15, 20, 18, 16, 18]
+        const dataBred = [10, 18, 15, 13, 16]
+        const dataNewChick = [5, 10, 15, 17, 26]
+        const month = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
+        const Egg = new Chart(Chicken, {
+            type: "bar",
+            data: {
+                fill: false,
+                labels: month,
+                datasets: [{
+                    label: 'ให้ไข่',
+                    backgroundColor: '#d2bf55',
+                    borderColor: '#d2bf55',
+                    data: dataEgg
+                }, {
+                    label: 'ไข่มีเชื้อ',
+                    backgroundColor: '#875053',
+                    borderColor: '#875053',
+                    data: dataBred
+                }, {
+                    label: 'ไก่เกิด',
+                    backgroundColor: '#fbbfca',
+                    borderColor: '#fbbfca',
+                    data: dataNewChick
+                }]
+            },
+            options: {
+                tension: 0.4,
+                legend: {
+                    display: false,
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        min: 0,
+                    },
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>

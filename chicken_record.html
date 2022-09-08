@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+    <title>Chicken Coop Smart Care</title>
+    <link rel="icon" href="./img/logo.png">
+    <link rel="stylesheet" href="./css/menu.css">
+    <link rel="stylesheet" href="./css/home.css">
+    <link rel="stylesheet" href="./css/chicken_record.css">
+    <link rel="stylesheet" href="./css/popup.css">
+</head>
+
+<body>
+    <div class="sidebar">
+        <div class="logo_content">
+            <div class="logo">
+                <img src="./img/logo.png" alt="logo">
+                <div class="logo_name">Chicken Coop Smart Care</div>
+            </div>
+            <div class="close">
+                <i class='bx bx-x'></i>
+            </div>
+        </div>
+        <ul class="nav_list">
+            <li>
+                <a href="./home.html">
+                    <i class='bx bx-home'></i>
+                    <span class="link_name">หน้าหลัก</span>
+                </a>
+                <span class="tooltip">หน้าหลัก</span>
+            </li>
+            <li>
+                <a href="./check_Egg.html">
+                    <img class="icon" src="./img/egg.png" alt="img_egg">
+                    <span class="link_name">บันทึกการให้ไข่</span>
+                </a>
+                <span class="tooltip">บันทึกการให้ไข่</span>
+            </li>
+            <li>
+                <a href="./bred_Egg.html">
+                    <img class="icon" src="./img/sexing.png" alt="img_sexing">
+                    <span class="link_name">บันทึกการผสมติด</span>
+                </a>
+                <span class="tooltip">บันทึกการผสมติด</span>
+            </li>
+            <li>
+                <a href="./menu.html" class="active_page">
+                    <img class="icon" src="./img/edit.png" alt="img_edit">
+                    <span class="link_name">บันทึก และดูข้อมูลไก่พันธุ์</span>
+                </a>
+                <span class="tooltip">บันทึก และดูข้อมูลไก่พันธุ์</span>
+            </li>
+            <li>
+                <a href="./calendar.html">
+                    <img class="icon" src="./img/calendar.png" alt="img_calendar">
+                    <span class="link_name">ดูประวัติค่าอุณหภูมิ ความชื้น <br>และความเข้มแสง</span>
+                </a>
+                <span class="tooltip">ดูประวัติค่าเซนเซอร์</span>
+            </li>
+            <li>
+                <a href="./setting.html">
+                    <i class='bx bx-cog'></i>
+                    <span class="link_name">ตั้งค่า</span>
+                </a>
+                <span class="tooltip">ตั้งค่า</span>
+            </li>
+            <li>
+                <button>
+                    <i class='bx bx-log-out'></i>
+                    <span class="link_name">ออกจากระบบ</span>
+                </button>
+                <span class="tooltip">ออกจากระบบ</span>
+            </li>
+        </ul>
+    </div>
+    <div class="menu">
+        <i class='bx bx-menu' id="btn"></i>
+        <div class="username-md">
+            <i class='bx bxs-user-circle'></i>
+            <div class="name">thanawat<br>watthanasuchart</div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="contain">
+            <h1>ข้อมูลไก่พันธุ์</h1>
+            <div class="breadcrumb">
+                <div class="namepage"><a href="#">บันทึก และดูข้อมูลไก่พันธุ์</a></div>
+                <div class="bread">></div>
+                <div class="namepage"><a href="#">ค้นหาไก่พันธุ์</a></div>
+                <div class="bread">></div>
+                <div class="namepage"><a href="#">ไก่พันธุ์หมายเลข A-501</a></div>
+            </div>
+            <div class="content">
+                <div class="box_content">
+                    <h2>หมายเลขไก่พันธุ์ : A-501</h2>
+                    <div class="record">
+                        <div class="record_funtion">
+                            <img class="img_chicke" src="./img/img_chicken.png" alt="img_chicken">
+                            <div class="funtion_box">
+                                <a class="funtion" href="./record_weight.html">ตารางน้ำหนัก</a>
+                                <a class="funtion" href="./record_bodysize.html">ตารางขนาดตัว</a>
+                                <a class="funtion" href="./record_feed.html">ตารางอาหาร</a>
+                                <a class="funtion" href="./record_vaccin.html">ตารางวัคซีน</a>
+                                <a class="funtion" href="./record_bred.html">ตารางจับคู่ผสม</a>
+                                <a class="funtion" href="./record_egg.html">ตารางการให้ไข่</a>
+                                <a class="funtion" href="./record_egg.html">ตารางการให้ไข่</a>
+                            </div>
+                            <div class="funtion_box">
+                                <a class="funtion out" href="#">ปลดประจำการ</a>
+                                <a class="funtion edit" href="#">แก้ไขข้อมูล</a>
+                                <a class="funtion die" href="#">ตาย</a>
+                            </div>
+                        </div>
+                        <div class="record_chicken">
+                            <div class="format"><samp>หมายเลขพ่อไก่พันธุ์:</samp>A-455</div>
+                            <div class="format"><samp>หมายเลขคอก:</samp>1</div>
+                            <div class="format"><samp>หมายเลขแม่ไก่พันธุ์:</samp>A-457</div>
+                            <div class="format"><samp>พันธุ์ไก่:</samp>ไก่ขาว</div>
+                            <div class="format"><samp>พันธุกรรม:</samp>AAA</div>
+                            <div class="format"><samp>เพศ:</samp>เมีย</div>
+                            <div class="format"><samp>อุณหภูมิในโรงฟัก:</samp>32  ํC</div>
+                            <div class="format"><samp>อายุ:</samp>8 สัปดาห์</div>
+                            <div class="format"><samp>อุณหภูมิขณะฟัก:</samp>34  ํC</div>
+                            <div class="format"><samp>สถานะ:</samp>ไก่ทดแทน</div>
+                            <div class="format"><samp>ความชื้นขณะฟัก:</samp>50%</div>
+                            <div class="format"><samp>น้ำหนัก:</samp>3.4 kg</div>
+                            <div class="format"><samp>ความยาวรอบอก:</samp>15 cm</div>
+                            <div class="format"><samp>วันที่เกิด:</samp>02 / 08 /2564</div>
+                            <div class="format"><samp>อัตรากาารให้ไข่:</samp>45.0%</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+        <div class="sonser">
+            <div class="username">
+                <i class='bx bxs-user-circle'></i>
+                <div class="name">thanawat watthanasuchart</div>
+            </div>
+            <div class="outside">
+                <p>วัดค่าภายนอก</p>
+                <div class="sonser_outside">
+                    <div class="get_sonser">
+                        <img src="./img/temperature.png" alt="img_tem">
+                        <div class="amount">36 °C</div>
+                    </div>
+                    <div class="get_sonser">
+                        <img src="./img/humidity.png" alt="img_humidity">
+                        <div class="amount">76%</div>
+                    </div>
+                </div>
+            </div>
+            <div class="inside">
+                <p>วัดค่าภายใน</p>
+                <div class="sonser_inside">
+                    <div class="get_sonser">
+                        <img src="./img/temperature.png" alt="img_tem">
+                        <div class="amount">36 °C</div>
+                    </div>
+                    <div class="get_sonser">
+                        <img src="./img/humidity.png" alt="img_humidity">
+                        <div class="amount">76%</div>
+                    </div>
+                </div>
+                <div class="sonser_inside">
+                    <div class="get_sonser">
+                        <img src="./img/light.png" alt="img_light">
+                        <div class="amount">15 lx</div>
+                    </div>
+                    <div class="get_sonser">
+                        <img src="./img/NH3.png" alt="img_NH3">
+                        <div class="amount">15%</div>
+                    </div>
+                </div>
+            </div>
+            <div class="analyze">
+                <p>ผลการวิเคราะห์</p>
+                <div class="sonser_analyze">
+                    <div class="get_sonser">
+                        <img src="./img/temperature.png" alt="img_tem">
+                        <div class="amount">ปกติ</div>
+                    </div>
+                    <div class="get_sonser">
+                        <img src="./img/humidity.png" alt="img_humidity">
+                        <div class="amount">ปกติ</div>
+                    </div>
+                </div>
+                <div class="sonser_analyze">
+                    <div class="get_sonser">
+                        <img src="./img/light.png" alt="img_light">
+                        <div class="amount">ค่อนข้างน้อย</div>
+                    </div>
+                    <div class="get_sonser">
+                        <img src="./img/NH3.png" alt="img_NH3">
+                        <div class="amount">ปกติ</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="popup popup_die">
+        <div class="popup_model">
+            <i class='bx bxs-x-circle'></i>
+            <h4>ต้องการเปลี่ยนสถานะหรือไม่?</h4>
+            <div class="event">
+                <a href="#" class="submit">ตกลง</a>
+                <button type="button" class="cencel">ยกเลิก</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="popup popup_del">
+        <div class="popup_model">
+            <i class='bx bxs-x-circle'></i>
+            <h4>ต้องการปลดประจำการไก่หรือไม่?</h4>
+            <div class="event">
+                <a href="#" class="submit">ตกลง</a>
+                <button type="button" class="cencel">ยกเลิก</button>
+            </div>
+        </div>
+    </div>
+    <script src="js/jquery.js"></script>
+    <script src="js/slick.min.js"></script>
+    <script src="./js/menu.js"></script>
+    <script src="js/slider.js"></script>
+    <script>
+      
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+    <title>Chicken Coop Smart Care</title>
+    <link rel="icon" href="./img/logo.png">
+    <link rel="stylesheet" href="./css/menu.css">
+    <link rel="stylesheet" href="./css/home.css">
+    <link rel="stylesheet" href="./css/feedfood.css">
+</head>
+
+<body>
+    <div class="sidebar">
+        <div class="logo_content">
+            <div class="logo">
+                <img src="./img/logo.png" alt="logo">
+                <div class="logo_name">Chicken Coop Smart Care</div>
+            </div>
+            <div class="close">
+                <i class='bx bx-x'></i>
+            </div>
+        </div>
+        <ul class="nav_list">
+            <li>
+                <a href="./home.html">
+                    <i class='bx bx-home'></i>
+                    <span class="link_name">หน้าหลัก</span>
+                </a>
+                <span class="tooltip">หน้าหลัก</span>
+            </li>
+            <li>
+                <a href="./check_Egg.html">
+                    <img class="icon" src="./img/egg.png" alt="img_egg">
+                    <span class="link_name">บันทึกการให้ไข่</span>
+                </a>
+                <span class="tooltip">บันทึกการให้ไข่</span>
+            </li>
+            <li>
+                <a href="./bred_Egg.html">
+                    <img class="icon" src="./img/sexing.png" alt="img_sexing">
+                    <span class="link_name">บันทึกการผสมติด</span>
+                </a>
+                <span class="tooltip">บันทึกการผสมติด</span>
+            </li>
+            <li>
+                <a href="./menu.html" class="active_page">
+                    <img class="icon" src="./img/edit.png" alt="img_edit">
+                    <span class="link_name">บันทึก และดูข้อมูลไก่พันธุ์</span>
+                </a>
+                <span class="tooltip">บันทึก และดูข้อมูลไก่พันธุ์</span>
+            </li>
+            <li>
+                <a href="./calendar.html">
+                    <img class="icon" src="./img/calendar.png" alt="img_calendar">
+                    <span class="link_name">ดูประวัติค่าอุณหภูมิ ความชื้น <br>และความเข้มแสง</span>
+                </a>
+                <span class="tooltip">ดูประวัติค่าเซนเซอร์</span>
+            </li>
+            <li>
+                <a href="./setting.html">
+                    <i class='bx bx-cog'></i>
+                    <span class="link_name">ตั้งค่า</span>
+                </a>
+                <span class="tooltip">ตั้งค่า</span>
+            </li>
+            <li>
+                <button>
+                    <i class='bx bx-log-out'></i>
+                    <span class="link_name">ออกจากระบบ</span>
+                </button>
+                <span class="tooltip">ออกจากระบบ</span>
+            </li>
+        </ul>
+    </div>
+    <div class="menu">
+        <i class='bx bx-menu' id="btn"></i>
+        <div class="username-md">
+            <i class='bx bxs-user-circle'></i>
+            <div class="name">thanawat<br>watthanasuchart</div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="contain">
+            <h1>ให้อาหารไก่พันธุ์</h1>
+            <div class="breadcrumb">
+                <div class="namepage"><a href="#">บันทึก และดูข้อมูลไก่พันธุ์</a></div>
+                <div class="bread">></div>
+                <div class="namepage"><a href="#">ให้อาหารไก่พันธุ์</a></div>
+            </div>
+            <div class="content">
+                <div class="box_content">
+                    <h2>ตารางการให้อาหารไก่พันธุ์</h2>
+                    <div class="feed_container">
+                        <div class="table">
+                            <table border="1" class="thead tfood">
+                                <tr>
+                                    <th class="trow1" >ลำดับ</th>
+                                    <th class="trow2">ชื่ออาหาร</th>
+                                    <th class="trow3">รายละเอียด</th>
+                                </tr>
+                            </table>
+                            <div class="table_body">
+                                <table class="tbody" border="1">
+                                    <tr>
+                                        <td class="brow1">1</td>
+                                        <td class="brow2">ไก่ฉีก</td>
+                                        <td class="brow3">20-27 /5/65 :อายุ 1-4 wk , 9 ถุง</td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="form_feed">
+                            <form action="./feedfood.html" method="get">
+                                <div class="format-date">
+                                    เลือกวันที่ :
+                                    <input type="date" name="date" id="date">
+                                </div>
+                                <p class="typefeed">ประเภทการให้</p>
+                                <div class="format_type">
+                                    <div class="group">
+                                        <input type="radio" name="format" id="one" checked>
+                                        <label for="one">ให้เป็นตัว</label>
+                                    </div>
+                                    <div class="group">
+                                        <input type="radio" name="format" id="group">
+                                        <label for="group">ให้เป็นคอก</label>
+                                    </div>
+                                </div>
+                                <div class="format_id">
+                                    <div class="text_total">
+                                        <p>ใส่รหัสไก่พันธุ์ ( <samp class="total"></samp> ตัว )</p>
+                                    </div>
+                                    <div class="field_wrapper">
+                                        <div class="format-id">
+                                            <input type="text" name="chicken_id[]" class="inp-id"
+                                                placeholder="ใส่รหัสไก่พันธุ์" required />
+                                        </div>
+                                    </div>
+                                    <a href="javascript:void(0);" class="add_button" title="Add Chicken">
+                                        <i class='bx bxs-plus-circle'></i> เพิ่มรหัสไก่พันธุ์
+                                    </a>
+                                    <p class="note">*เพิ่มรหัสไก่พันธุ์ได้มากสุด 10ตัว</p>
+                                </div>
+                                <div class="format_coop">
+                                    หมายเลขคอก :
+                                    <select name="coop" id="coop" class="select_food" required>
+                                        <option value="" hidden>เลือกคอก</option>
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                        <option value="4">4</option>
+                                    </select>
+                                </div>
+                                <div class="format_feed">
+                                    <p>อาหารที่ใช้</p>
+                                    <div class="format">
+                                        เลือกสูตร :
+                                        <select name="usefood" id="usefood" class="select_food">
+                                            <option value="" hidden>เลือกสูตร</option>
+                                            <option value="เร่งโต">เร่งโต</option>
+                                        </select>
+                                    </div>
+                                    <div class="format">
+                                        ปริมาณที่ให้ :
+                                        <input type="text" name="quantity_given" id="quantity_given" class="inp inp-num">
+                                    </div>
+                                    <p>อาหารที่เหลือ</p>
+                                    <div class="format">
+                                        เลือกสูตร :
+                                        <select name="leftfood" id="leftfood" class="select_food">
+                                            <option value="" hidden>เลือกสูตร</option>
+                                            <option value="เร่งโต">เร่งโต</option>
+                                        </select>
+                                    </div>
+                                    <div class="format">
+                                        ปริมาณที่ให้ :
+                                        <input type="text" name="left_given" id="left_given" class="inp inp-num">
+                                    </div>
+                                </div>
+                                <div class="btn-submit">
+                                    <button type="submit" class="submit">ยืนยัน</button>
+                                    <button type="reset" class="reset">รีเซ็ต</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="sonser">
+            <div class="username">
+                <i class='bx bxs-user-circle'></i>
+                <div class="name">thanawat watthanasuchart</div>
+            </div>
+            <div class="outside">
+                <p>วัดค่าภายนอก</p>
+                <div class="sonser_outside">
+                    <div class="get_sonser">
+                        <img src="./img/temperature.png" alt="img_tem">
+                        <div class="amount">36 °C</div>
+                    </div>
+                    <div class="get_sonser">
+                        <img src="./img/humidity.png" alt="img_humidity">
+                        <div class="amount">76%</div>
+                    </div>
+                </div>
+            </div>
+            <div class="inside">
+                <p>วัดค่าภายใน</p>
+                <div class="sonser_inside">
+                    <div class="get_sonser">
+                        <img src="./img/temperature.png" alt="img_tem">
+                        <div class="amount">36 °C</div>
+                    </div>
+                    <div class="get_sonser">
+                        <img src="./img/humidity.png" alt="img_humidity">
+                        <div class="amount">76%</div>
+                    </div>
+                </div>
+                <div class="sonser_inside">
+                    <div class="get_sonser">
+                        <img src="./img/light.png" alt="img_light">
+                        <div class="amount">15 lx</div>
+                    </div>
+                    <div class="get_sonser">
+                        <img src="./img/NH3.png" alt="img_NH3">
+                        <div class="amount">1500%</div>
+                    </div>
+                </div>
+            </div>
+            <div class="analyze">
+                <p>ผลการวิเคราะห์</p>
+                <div class="sonser_analyze">
+                    <div class="get_sonser">
+                        <img src="./img/temperature.png" alt="img_tem">
+                        <div class="amount">ปกติ</div>
+                    </div>
+                    <div class="get_sonser">
+                        <img src="./img/humidity.png" alt="img_humidity">
+                        <div class="amount">ปกติ</div>
+                    </div>
+                </div>
+                <div class="sonser_analyze">
+                    <div class="get_sonser">
+                        <img src="./img/light.png" alt="img_light">
+                        <div class="amount">ค่อนข้างน้อย</div>
+                    </div>
+                    <div class="get_sonser">
+                        <img src="./img/NH3.png" alt="img_NH3">
+                        <div class="amount">ปกติ</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="js/jquery.js"></script>
+    <script src="./js/menu.js"></script>
+    <script src="./js/popup.js"></script>
+    <script src="./js/table.js"></script>
+    <script src="./js/feed.js"></script>
+</body>
+
+</html>
