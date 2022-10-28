@@ -22,22 +22,19 @@ float fahrenheitData;
 float analysis(int);
 float Rs;
 int sensorValue;
-int hard_ware;
+
 uint16_t lux;
-int ledPin = D2;
+int ledPin = D0;
 const char* ssid = "test"; //"NP-Park-A513";// 
 const char* password = "password"; //"33732036";
 //WiFiClient client;
 char server[] = "cksmartcare.com";   //eg: 192.168.16.61
-const char* fringerprint = "6C 88 57 9F DA 5F 4F F1 FA 11 9B F5 DB A0 2D E7 AA C6 48 43";//b
-                          //6C 88 57 9F DA 5F 4F F1 FA 11 9B F5 DB A0 2D E7 AA C6 48 43
+const char* fringerprint = "30 25 f9 ce 0f 7b fa ae 19 6a c1 af 84 0f 49 bd 26 b4 9b 0b";//b
 WiFiClientSecure client;
 
-void setup() {
-  pinMode(D6, OUTPUT);//green ligth
-  pinMode(D7, OUTPUT);//red ligth(default LOW)
-  digitalWrite(D7,HIGH);// red ligth off
-  Serial.begin(115200);
+void setup()
+{
+ Serial.begin(115200);
   delay(10);
   dht.begin();
   LightSensor.begin();
@@ -50,34 +47,28 @@ void setup() {
   WiFi.begin(ssid, password);
  
   while (WiFi.status() != WL_CONNECTED) {
-    digitalWrite(D6,LOW);   //green ligth on
-    delay(1000);
-    digitalWrite(D6,HIGH);  //green ligth off
+    delay(500);
     Serial.print(".");
-    delay(1000);
   }
   Serial.println("");
   Serial.println("WiFi connected");
+ 
   Serial.println("Server started");
   Serial.print(WiFi.localIP());
   delay(100);
   Serial.println("connecting...");
-  digitalWrite(D6,LOW);  //green ligth on
   pinMode(LED_BUILTIN, OUTPUT);
  }
 void loop() { 
-  while (hard_ware != 1) {
-    sensorValue = analogRead(MQ_137);
-    lux = LightSensor.GetLightIntensity();
-    humidityData = dht.readHumidity();
-    temperatureData = dht.readTemperature(),1;
-    fahrenheitData = dht.readTemperature(true),1;
-    check_value(temperatureData,humidityData,lux);
-    digitalWrite(D6,LOW);  //green ligth off
-  }
-  client.setFingerprint(fringerprint); //key
+  sensorValue = analogRead(MQ_137);
+  digitalWrite(LED_BUILTIN, LOW);
+  lux = LightSensor.GetLightIntensity();
+  humidityData = dht.readHumidity();
+  temperatureData = dht.readTemperature(),1;
+  fahrenheitData = dht.readTemperature(true),1;
+  client.setFingerprint(fringerprint);
   Sending_To_phpmyadmindatabase();
-  //digitalWrite(LED_BUILTIN, HIGH);
+  digitalWrite(LED_BUILTIN, HIGH);
   //delay(600000); // interval
   delay(100000);
 }
@@ -97,7 +88,7 @@ float analysis(int adc){
  void Sending_To_phpmyadmindatabase()  //CONNECTING WITH MYSQL
  {
    if (client.connect(server, 443)) {
-    digitalWrite(D6,LOW);//green ligth on
+    
     Serial.println("connected");
     // Make a HTTP request:
     client.print("GET /send-data-sensor?sm_temperature=");     //YOUR URL
@@ -127,13 +118,8 @@ float analysis(int adc){
     client.println("Host: cksmartcare.com");
     client.println("Connection: close");
     client.println();
-    digitalWrite(D6,HIGH);  //green ligth off
-    delay(500);
-    digitalWrite(D6,LOW);//green ligth on
   } else {
     // if you didn't get a connection to the server:
-    digitalWrite(D7,LOW); //red ligth on
-    digitalWrite(D6,HIGH); //red ligth on
     Serial.println("connection failed");
     Serial.print("temperatureData: ");
     Serial.print(temperatureData); //องศาC
@@ -147,20 +133,5 @@ float analysis(int adc){
     Serial.print("Ammonia : ");
     Serial.print(analysis(sensorValue),3);
     Serial.println(" ppm");
-    
-  }
-}
-
-void check_value(float c,float h,float l){
-  if(isnan(c) || isnan(h) || l == 54612 ){
-    hard_ware = 0;
-    Serial.println("error");
-    digitalWrite(D7,LOW);// red ligth on
-    delay(1000);
-    digitalWrite(D7,HIGH);// red ligth off
-    delay(1000);
-  }else{
-    hard_ware =1;
-    Serial.println("ok");
   }
 }
